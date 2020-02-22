@@ -1,0 +1,32 @@
+{
+  "name": "andeor",
+  "version": "1.0.0",
+  "description": "Library to send data anchor to a video time",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ventinc/Andeor.git"
+  },
+  "keywords": [
+    "Anchor",
+    "Video",
+    "Youtube",
+    "Data"
+  ],
+  "author": "Vincent Dusautoir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ventinc/Andeor/issues"
+  },
+  "homepage": "https://github.com/Ventinc/Andeor#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine-core": "^3.5.0",
+    "karma": "^4.4.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^3.1.1"
+  }
+}
