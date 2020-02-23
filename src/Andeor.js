@@ -51,12 +51,39 @@ class Andeor {
     return datas;
   }
 
+  sendDataToDelete(time) {
+    const datasToDelete = this.getDatasAlreadySentOutTime(time);
+
+    if (datasToDelete.length > 0) {
+      for (const data of datasToDelete) {
+        this.eventEmitter.emit(Andeor.events.remove, data);
+      }
+
+      const datasToDeleteIds = datasToDelete.map(dataToDelete => dataToDelete.id);
+
+      this.datasAlreadySent = this.datasAlreadySent.filter(dataAlreadySent => !datasToDeleteIds.includes(dataAlreadySent.id));
+    }
+  }
+
+  sendDataToAdd(time) {
+    const datasToAdd = this.getDatasAtTime(time);
+
+    if (datasToAdd.length > 0) {
+      for (const data of datasToAdd) {
+        this.eventEmitter.emit(Andeor.events.add, data);
+      }
+      this.datasAlreadySent.push(...datasToAdd);
+    }
+  }
+
   run() {
     if (this.state !== 'running') this.eventEmitter.emit(Andeor.events.running);
 
     this.state = 'running';
 
     const time = this.provider.getTime();
+    this.sendDataToDelete(time);
+    this.sendDataToAdd(time);
 
     if (this.state === 'running') {
       this.requestId = requestAnimationFrame(() => this.run());
