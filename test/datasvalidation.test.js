@@ -21,7 +21,7 @@ describe('Schema validation in Andeor', () => {
   ]
 
   failedTestCases.forEach(data => {
-    it(`should throw an error "timeBegin: ${data.timeBegin}, timeEnd: ${data.timeEnd}, data: ${data.data}"`, () => {
+    it(`should throw an error with value: "timeBegin: ${data.timeBegin}, timeEnd: ${data.timeEnd}, data: ${data.data}"`, () => {
       expect(() => new Andeor([data])).toThrow()
     });
   });
