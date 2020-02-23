@@ -1,4 +1,17 @@
+
 describe('Andeor instance', () => {
+  const DefaultProvider = Andeor.providers.DefaultProvider;
+
+  class TestProvider extends DefaultProvider {
+    preload() {
+      return true;
+    }
+  
+    getTime() {
+      return 0;
+    }
+  }
+
   it('is created', () => {
     const andeor = new Andeor();
     expect(andeor).toBeInstanceOf(Andeor);
@@ -55,5 +68,13 @@ describe('Andeor instance', () => {
     andeor.stop();
 
     expect(stoppedEvent).toHaveBeenCalledTimes(1);
+  })
+
+  it('throw an error if provider does not extend DefaultProvider', () => {
+    expect(() => new Andeor([], {})).toThrow();
+  })
+
+  it('work with the TestProvider', () => {
+    expect(() => new Andeor([], new TestProvider())).not.toThrow();
   })
 })
