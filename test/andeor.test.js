@@ -32,4 +32,28 @@ describe('Andeor instance', () => {
     expect(andeor.state).toBe('stopped');
     expect(andeor.requestId).not.toBe();
   })
+
+  it('launch event on running', () => {
+    const andeor = new Andeor();
+
+    const runningEvent = jasmine.createSpy('runningEvent');
+
+    andeor.on(Andeor.events.running, runningEvent);
+
+    andeor.run();
+
+    expect(runningEvent).toHaveBeenCalledTimes(1);
+  })
+
+  it('launch event on stopped', () => {
+    const andeor = new Andeor();
+
+    const stoppedEvent = jasmine.createSpy('stoppedEvent');
+
+    andeor.on(Andeor.events.stopped, stoppedEvent);
+
+    andeor.stop();
+
+    expect(stoppedEvent).toHaveBeenCalledTimes(1);
+  })
 })
