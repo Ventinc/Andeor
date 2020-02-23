@@ -2,7 +2,7 @@
   "name": "andeor",
   "version": "1.0.0",
   "description": "Library to send data anchor to a video time",
-  "main": "index.js",
+  "main": "build/andeor.js",
   "scripts": {
     "build": "webpack",
     "test": "karma start karma.conf.js --single-run"
@@ -23,7 +23,9 @@
     "url": "https://github.com/Ventinc/Andeor/issues"
   },
   "homepage": "https://github.com/Ventinc/Andeor#readme",
-  "dependencies": {},
+  "dependencies": {
+    "yup": "^0.28.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
