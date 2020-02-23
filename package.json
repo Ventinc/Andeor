@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/Ventinc/Andeor#readme",
   "dependencies": {
+    "eventemitter3": "^4.0.0",
     "yup": "^0.28.1"
   },
   "devDependencies": {
