@@ -1,12 +1,13 @@
 import datasSchema from './schemas/datas';
 import DefaultProvider from './providers/DefaultProvider';
+import YoutubeProvider from './providers/YoutubeProvider';
 import EventEmitter from 'eventemitter3';
 import uuid from 'uuid/v1';
 
 class Andeor {
   static providers = {
     DefaultProvider,
-    youtube: 'test',
+    youtube: YoutubeProvider,
   }
 
   static events = {
