@@ -5,16 +5,14 @@ import EventEmitter from 'eventemitter3';
 import uuid from 'uuid/v1';
 
 class Andeor {
-  static providers = {
-    DefaultProvider,
-    youtube: YoutubeProvider,
-  }
+  static DefaultProvider = DefaultProvider;
+  static YoutubeProvider = YoutubeProvider;
 
   static events = {
-    running: Symbol('running'),
-    stopped: Symbol('stopped'),
-    add: Symbol('add'),
-    remove: Symbol('remove'),
+    running: 0,
+    stopped: 1,
+    add: 2,
+    remove: 3,
   }
 
   constructor(datas = [], provider = new DefaultProvider()) {
