@@ -1,6 +1,8 @@
+import Andeor from "../Andeor";
+
 class DefaultProvider {
   setAndeor(andeor) {
-    if (!andeor) {
+    if (!andeor || !(andeor instanceof Andeor)) {
       throw new Error('Andeor need to be defined');
     }
 
