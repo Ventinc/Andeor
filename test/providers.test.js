@@ -1,9 +1,9 @@
 describe('Providers', () => {
-  it('are defined', () => {
-    expect(Andeor.providers).toBeDefined();
+  it('have DefaultProvider', () => {
+    expect(Andeor.DefaultProvider).toBeDefined();
   })
 
-  it('have DefaultProvider', () => {
-    expect(Andeor.providers.DefaultProvider).toBeDefined();
+  it('have YoutubeProvider', () => {
+    expect(Andeor.DefaultProvider).toBeDefined();
   })
 })

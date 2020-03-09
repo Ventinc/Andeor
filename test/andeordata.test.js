@@ -1,5 +1,5 @@
 describe('Andeor data getter', () => {
-  const DefaultProvider = Andeor.providers.DefaultProvider;
+  const DefaultProvider = Andeor.DefaultProvider;
 
   class TestProvider extends DefaultProvider {
     constructor() {

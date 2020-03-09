@@ -1,6 +1,6 @@
 
 describe('Andeor instance', () => {
-  const DefaultProvider = Andeor.providers.DefaultProvider;
+  const DefaultProvider = Andeor.DefaultProvider;
 
   class TestProvider extends DefaultProvider {
     preload() {

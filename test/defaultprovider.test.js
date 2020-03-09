@@ -1,5 +1,5 @@
 describe('DefaultProvider', () => {
-  const DefaultProvider = Andeor.providers.DefaultProvider;
+  const DefaultProvider = Andeor.DefaultProvider;
   
   it('to instantiate without problem', () => {
     expect(new DefaultProvider()).toBeDefined();
