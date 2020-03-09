@@ -8,9 +8,9 @@ class YoutubeProvider extends DefaultProvider {
 
   preload() {
     this.player.addEventListener('onStateChange', (event) => {
-      if (event.data == 1) {
+      if (event.data === 1) {
         this.andeor.run();
-      } else {
+      } else if (event.data === 0) {
         this.andeor.stop();
       }
     });
