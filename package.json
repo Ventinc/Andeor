@@ -1,6 +1,6 @@
 {
   "name": "andeor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library to send data anchor to a video time",
   "main": "build/andeor.js",
   "files": [
